@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact us</title>
+	<style>
+
+
+
+        body {
+            background-color: #c4161c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgb(36, 37, 38);
+    color: rgb(36, 37, 38);
+
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        .main_heading {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #c4161c;
+            color: #eee9e9;
+        }
+        
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            
+            
+        }
+        
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            background-color:  rgb(163, 163, 184);
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+        
+        input[type="submit"] {
+            background-color: #c4161c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #f7f3f3;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 60px;
+          }
+          
+          nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+          }
+          
+          nav li {
+            margin: 0 10px;
+          }
+          
+          nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+          }
+          
+          nav a:hover {
+            background-color: #eb1111;
+          }
+          
+          /* Logo styles */
+          .logo-container {
+            display: flex;
+            align-items: center;
+          }
+          
+          .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+          }
+          
+          .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+          }
+          
+        
+        
+button {
+    background-color:  #eb1111;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #ddcc6c;
+}
+
+
+
+	</style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo-container">
+          <img src="static/myapp/images/logo.png" alt="Logo" class="logo">
+          <h1 class="logo-text">MealWise</h1>
+        </div>
+        <ul>
+          <li><a href="landing">Home</a></li>
+          <li><a href="generate_meal">Generate Meal</a></li>
+          <li><a href="landing"> About</a></li>
+        </ul>
+      </nav>
+
+      <div class="container">
+        <h1 class="main_heading">Contact Us</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <button type="send_email" >Submit</button>
+        </form>
+    </div>
+    
+    </body>
+
+
+</html>
+<script>
+   function send_email(){
+    window.location.href = "send_email"
+    }
+</script>
